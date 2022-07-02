@@ -7,13 +7,20 @@ var client = new Databox({
     push_token: tokens.databoxToken
 });
 
+function getDate() {
+    return new Date().toISOString()
+        .replace(/T/, ' ')     // replace T with a space
+        .replace(/\..+/, '')     // delete the dot and everything after;
+}
+
 // --- GET CURRENT MARIBOR TEMPERATURE ---
 axios.get('http://api.weatherapi.com/v1/current.json?key=' + tokens.weatherKey + '&q=Maribor&aqi=yes')
     .then(res => {
+        const date = getDate()
         client.push({
             key: 'Current temperature',
             value: res.data.current.temp_c,
-            date: '2018-02-23 09:00:00'
+            date: date
         }, function(result){
             console.log(result);
         });
@@ -29,15 +36,14 @@ function getUserPlaylists(token) {
             'Authorization': 'Bearer ' + token
         }
     }).then(res => {
-        /*console.log(`statusCode: ${res.status}`);
-       console.log(res.data.items[0].tracks.total)*/
-       client.push({
-           key: 'TracksInAlbum',
-           value: res.data.items[0].tracks.total,
-           date: '2022-02-23 09:00:00'
-       }, function(result){
-           console.log(result);
-       });
+        const date = getDate()
+        client.push({
+            key: 'Tracks in album',
+            value: res.data.items[0].tracks.total,
+            date: date
+        }, function(result){
+            console.log(result);
+        });
     }).catch(error => {
         console.error(error);
     });
@@ -50,16 +56,17 @@ function getArtistInfo(token) {
             'Authorization': 'Bearer ' + token
         }
     }).then(res => {
+        const date = getDate()
         client.insertAll([
             {
                 key: 'Popularity',
                 value: res.data.popularity,
-                date: '2022-02-23 09:00:00'
+                date: date
             },
             {
                 key: 'Followers',
                 value: res.data.followers.total,
-                date: '2022-02-23 09:00:00'
+                date: date
             }
         ], function(result){
             console.log(result);
@@ -88,4 +95,19 @@ request.post(authOptions, function(error, response, body) {
         getArtistInfo(token)
         getUserPlaylists(token)
     }
+});
+
+
+// --- GET CURRENT BITCOIN VALUE IN EUR ---
+axios.get('https://blockchain.info/ticker').then(res => {
+    const date = getDate()
+    client.push({
+        key: 'BTC value',
+        value: res.data.EUR.last,
+        date: date
+    }, function(result){
+        console.log(result);
+    });
+}).catch(error => {
+    console.error(error);
 });
