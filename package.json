@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node src/App.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,6 +12,9 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2",
-    "nodemon": "^2.0.18"
+    "databox": "^2.0.1",
+    "form-data": "^4.0.0",
+    "nodemon": "^2.0.18",
+    "request": "^2.88.2"
   }
 }
