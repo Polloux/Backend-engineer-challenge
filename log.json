@@ -1,0 +1,288 @@
+{
+    "logs": [
+        {
+            "provider": "WeatherApi",
+            "date": "2022-07-03 15:40:28",
+            "metrics": [
+                {
+                    "key": "Current temperature",
+                    "value": 31
+                }
+            ],
+            "KPICount": 1,
+            "status": "UNAUTHORIZED",
+            "error_message": "Unauthorized - Invalid token!"
+        },
+        {
+            "provider": "WeatherApi",
+            "date": "2022-07-03 15:42:22",
+            "metrics": [
+                {
+                    "key": "Current temperature",
+                    "value": 31
+                }
+            ],
+            "KPICount": 1,
+            "status": "UNAUTHORIZED",
+            "error_message": "Unauthorized - Invalid token!"
+        },
+        {
+            "provider": "WeatherApi",
+            "date": "2022-07-03 15:44:02",
+            "metrics": [
+                {
+                    "key": "Current temperature",
+                    "value": 31
+                }
+            ],
+            "KPICount": 1,
+            "status": "UNAUTHORIZED",
+            "error_message": "Unauthorized - Invalid token!"
+        },
+        {
+            "provider": "Spotify",
+            "date": "2022-07-03 15:44:02",
+            "metrics": [
+                {
+                    "key": "Tracks in album",
+                    "value": 50
+                }
+            ],
+            "KPICount": 1,
+            "status": "UNAUTHORIZED",
+            "error_message": "Unauthorized - Invalid token!"
+        },
+        {
+            "provider": "WeatherApi",
+            "date": "2022-07-03 15:44:14",
+            "metrics": [
+                {
+                    "key": "Current temperature",
+                    "value": 31
+                }
+            ],
+            "KPICount": 1,
+            "status": "OK"
+        },
+        {
+            "provider": "Spotify",
+            "date": "2022-07-03 15:44:14",
+            "metrics": [
+                {
+                    "key": "Tracks in album",
+                    "value": 50
+                }
+            ],
+            "KPICount": 1,
+            "status": "OK"
+        },
+        {
+            "provider": "WeatherApi",
+            "date": "2022-07-03 15:47:11",
+            "metrics": [
+                {
+                    "key": "Current temperature",
+                    "value": 33
+                }
+            ],
+            "KPICount": 1,
+            "status": "OK"
+        },
+        {
+            "provider": "Spotify",
+            "date": "2022-07-03 15:47:11",
+            "metrics": [
+                {
+                    "key": "Tracks in album",
+                    "value": 50
+                }
+            ],
+            "KPICount": 1,
+            "status": "OK"
+        },
+        {
+            "provider": "WeatherApi",
+            "date": "2022-07-03 15:47:25",
+            "metrics": [
+                {
+                    "key": "Current temperature",
+                    "value": 33
+                }
+            ],
+            "KPICount": 1,
+            "status": "OK"
+        },
+        {
+            "provider": "Spotify",
+            "date": "2022-07-03 15:47:25",
+            "metrics": [
+                {
+                    "key": "Tracks in album",
+                    "value": 50
+                }
+            ],
+            "KPICount": 1,
+            "status": "OK"
+        },
+        {
+            "provider": "Spotify",
+            "date": "2022-07-03 15:49:22",
+            "metrics": [
+                {
+                    "key": "Popularity",
+                    "value": 89
+                },
+                {
+                    "key": "Followers",
+                    "value": 20051895
+                }
+            ],
+            "KPICount": 2,
+            "status": "OK"
+        },
+        {
+            "provider": "WeatherApi",
+            "date": "2022-07-03 15:52:08",
+            "metrics": [
+                {
+                    "key": "Current temperature",
+                    "value": 33
+                }
+            ],
+            "KPICount": 1,
+            "status": "OK"
+        },
+        {
+            "provider": "Blockchain",
+            "date": "2022-07-03 15:52:08",
+            "metrics": [
+                {
+                    "key": "BTC value",
+                    "value": 18262.62
+                }
+            ],
+            "KPICount": 1,
+            "status": "OK"
+        },
+        {
+            "provider": "Spotify",
+            "date": "2022-07-03 15:52:08",
+            "metrics": [
+                {
+                    "key": "Popularity",
+                    "value": 89
+                },
+                {
+                    "key": "Followers",
+                    "value": 20051895
+                }
+            ],
+            "KPICount": 2,
+            "status": "OK"
+        },
+        {
+            "provider": "WeatherApi",
+            "date": "2022-07-03 15:52:40",
+            "metrics": [
+                {
+                    "key": "Current temperature",
+                    "value": 33
+                }
+            ],
+            "KPICount": 1,
+            "status": "OK"
+        },
+        {
+            "provider": "Blockchain",
+            "date": "2022-07-03 15:52:40",
+            "metrics": [
+                {
+                    "key": "BTC value",
+                    "value": 18262.62
+                }
+            ],
+            "KPICount": 1,
+            "status": "OK"
+        },
+        {
+            "provider": "Spotify",
+            "date": "2022-07-03 15:52:40",
+            "metrics": [
+                {
+                    "key": "Popularity",
+                    "value": 89
+                },
+                {
+                    "key": "Followers",
+                    "value": 20051895
+                }
+            ],
+            "KPICount": 2,
+            "status": "OK"
+        },
+        {
+            "provider": "Spotify",
+            "date": "2022-07-03 15:52:40",
+            "metrics": [
+                {
+                    "key": "Tracks in album",
+                    "value": 50
+                }
+            ],
+            "KPICount": 1,
+            "status": "OK"
+        },
+        {
+            "provider": "WeatherApi",
+            "date": "2022-07-03 15:56:05",
+            "metrics": [
+                {
+                    "key": "Current temperature",
+                    "value": 31
+                }
+            ],
+            "KPICount": 1,
+            "status": "OK"
+        },
+        {
+            "provider": "Blockchain",
+            "date": "2022-07-03 15:56:05",
+            "metrics": [
+                {
+                    "key": "BTC value",
+                    "value": 18255.04
+                }
+            ],
+            "KPICount": 1,
+            "status": "OK"
+        },
+        {
+            "provider": "Spotify",
+            "date": "2022-07-03 15:56:05",
+            "metrics": [
+                {
+                    "key": "Popularity",
+                    "value": 89
+                },
+                {
+                    "key": "Followers",
+                    "value": 20051895
+                }
+            ],
+            "KPICount": 2,
+            "status": "OK"
+        },
+        {
+            "provider": "Spotify",
+            "date": "2022-07-03 15:56:06",
+            "metrics": [
+                {
+                    "key": "Tracks in album",
+                    "value": 50
+                }
+            ],
+            "KPICount": 1,
+            "status": "OK"
+        }
+    ]
+}
