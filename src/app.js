@@ -14,10 +14,10 @@ function getDate() {
         .replace(/\..+/, '')     // Delete the dot and everything after
 }
 
-fs.readFile("log.json", function (err, data) { // If this is beginning of logs
+fs.readFile("logs.json", function (err, data) { // If this is beginning of logs
     if (data.length === 0) { // File is empty!
         const content = {logs: []}
-        fs.writeFile('log.json', JSON.stringify(content, null, 4), err => {
+        fs.writeFile('logs.json', JSON.stringify(content, null, 4), err => {
             if (err) {
                 console.error(err);
             }
@@ -26,7 +26,6 @@ fs.readFile("log.json", function (err, data) { // If this is beginning of logs
 })
 
 function saveLog(provider, date, metrics, status, message) {
-    console.log(metrics)
     const newLog = {
         provider: provider,
         date: date,
@@ -38,11 +37,11 @@ function saveLog(provider, date, metrics, status, message) {
         newLog.error_message = message
     }
 
-    fs.readFile("log.json", function (err, data) {
+    fs.readFile("logs.json", function (err, data) {
         var obj = JSON.parse(data)
         obj['logs'].push(newLog) // Push new long into logs json array of objects
 
-        fs.writeFile("log.json", JSON.stringify(obj, null, 4), function (err) {
+        fs.writeFile("logs.json", JSON.stringify(obj, null, 4), function (err) {
             if (err) console.log('error', err);
         });
     })

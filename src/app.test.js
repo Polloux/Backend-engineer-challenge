@@ -6,7 +6,7 @@ const tokens = require("../util/tokens");
 function isDateValid(date) {
     // Does date return correct format
     const dateString = date.toString();
-    if(!/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/.test(dateString)) {
+    if (!/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/.test(dateString)) {
         return false
     }
     let parts = dateString.split(/[\s:-]+/)
@@ -17,14 +17,14 @@ function isDateValid(date) {
     var year = parseInt(parts[0])
 
     // Check the ranges of month and year
-    if(3000 < year || year < 1000 || month === 0 || month > 12) {
+    if (3000 < year || year < 1000 || month === 0 || month > 12) {
         return false
     }
 
-    var monthLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
+    var monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
     // Leap years adjustment
-    if(year % 400 === 0 || (year % 100 !== 0 && year % 4 === 0)) {
+    if (year % 400 === 0 || (year % 100 !== 0 && year % 4 === 0)) {
         monthLength[1] = 29
     }
 
@@ -39,8 +39,8 @@ test('Is date format correct', () => {
 })
 
 
-describe("Blockchain API Testing", ()=>{
-    it("Should obtain website api status",async ()=>{
+describe("Blockchain API Testing", () => {
+    it("Should obtain website api status", async () => {
         const res = await axios.get('https://blockchain.info/ticker', { // Calling GET API
             headers: {
                 'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ describe("Blockchain API Testing", ()=>{
 })
 
 
-describe("Testing Databox push",  () => {
+describe("Testing Databox push", () => {
     it('should push key and value and return OK status', () => {
         var client = new Databox({
             push_token: tokens.databoxToken
