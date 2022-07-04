@@ -9,23 +9,24 @@ var client = new Databox({
 });
 
 function getDate() {
-    return new Date().toISOString()
-        .replace(/T/, ' ')     // replace T with a space
-        .replace(/\..+/, '')     // delete the dot and everything after;
+    return new Date().toISOString() // We end up with 2022-07-04 02:12:11 format
+        .replace(/T/, ' ')     // Replace T with a space
+        .replace(/\..+/, '')     // Delete the dot and everything after
 }
 
-fs.readFile("log.json", function(err, data) { // If this is beginning of logs
+fs.readFile("log.json", function (err, data) { // If this is beginning of logs
     if (data.length === 0) { // File is empty!
         const content = {logs: []}
         fs.writeFile('log.json', JSON.stringify(content, null, 4), err => {
             if (err) {
                 console.error(err);
             }
-        });
+        })
     }
 })
 
 function saveLog(provider, date, metrics, status, message) {
+    console.log(metrics)
     const newLog = {
         provider: provider,
         date: date,
@@ -33,18 +34,20 @@ function saveLog(provider, date, metrics, status, message) {
         KPICount: metrics.length,
         status: status
     }
-    if (status !== "OK") {
+    if (status !== "OK") { // Error message needs to be appended
         newLog.error_message = message
     }
 
-    fs.readFile("log.json", function(err, data) {
+    fs.readFile("log.json", function (err, data) {
         var obj = JSON.parse(data)
-        obj['logs'].push(newLog)
+        obj['logs'].push(newLog) // Push new long into logs json array of objects
 
-        fs.writeFile("log.json", JSON.stringify(obj, null, 4),function(err) {
-            if(err) console.log('error', err);
+        fs.writeFile("log.json", JSON.stringify(obj, null, 4), function (err) {
+            if (err) console.log('error', err);
         });
     })
+    //console.log(newLog)
+    return newLog
 }
 
 // --- GET CURRENT MARIBOR TEMPERATURE ---
@@ -55,7 +58,7 @@ axios.get('http://api.weatherapi.com/v1/current.json?key=' + tokens.weatherKey +
             key: 'Current temperature',
             value: res.data.current.temp_c,
             date: date
-        }, function(result){
+        }, function (result) {
 
             // SAVE LOG
             const metrics = [{
@@ -82,7 +85,7 @@ function getUserPlaylists(token) {
             key: 'Tracks in album',
             value: res.data.items[0].tracks.total,
             date: date
-        }, function(result){
+        }, function (result) {
             console.log(result.message)
             // SAVE LOG
             const metrics = [{
@@ -116,7 +119,7 @@ function getArtistInfo(token) {
                 value: res.data.followers.total,
                 date: date
             }
-        ], function(result){
+        ], function (result) {
             console.log(result.message)
 
             // SAVE LOG
@@ -131,9 +134,9 @@ function getArtistInfo(token) {
             saveLog("Spotify", date, metrics, result.status, result.message)
         });
     })
-    .catch(error => {
-        console.error(error);
-    });
+        .catch(error => {
+            console.error(error);
+        });
 }
 
 const authOptions = { // Getting auth 2 key
@@ -148,7 +151,8 @@ const authOptions = { // Getting auth 2 key
     method: 'post'
 }
 
-request.post(authOptions, function(error, response, body) {
+request.post(authOptions, function (error, response, body) {
+    let token;
     if (!error && response.statusCode === 200) {  // Auth 2 token obtained
         token = body.access_token;
         getArtistInfo(token) // 2 metrics
@@ -164,7 +168,7 @@ axios.get('https://blockchain.info/ticker').then(res => {
         key: 'BTC value',
         value: res.data.EUR.last, // Last value of BTC in EUR
         date: date
-    }, function(result){
+    }, function (result) {
         console.log(result.message);
 
         // SAVE LOG
@@ -176,4 +180,6 @@ axios.get('https://blockchain.info/ticker').then(res => {
     });
 }).catch(error => {
     console.error(error);
-});
+})
+
+module.exports = getDate
