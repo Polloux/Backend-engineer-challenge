@@ -45,7 +45,6 @@ function saveLog(provider, date, metrics, status, message) {
             if (err) console.log('error', err);
         });
     })
-    //console.log(newLog)
     return newLog
 }
 
