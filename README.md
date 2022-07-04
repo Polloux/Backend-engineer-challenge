@@ -26,9 +26,9 @@ For my unit tests I used [Jest](https://jestjs.io/).
 
 ## Metrics and services <a name="MetricsAndServices"></a>
 I made care to incorporate a variety of authentication methods in my metrics. I used a combination of OAuth, APIkey and no authentication service providers:
-* [Spotify](https://spotify.com/) (3 metrics)
-* [WeatherAPI](https://www.weatherapi.com/) (1 metric)
-* [Blockchain](https://www.blockchain.com/) (1 metric)
+* [Spotify](https://spotify.com/) (3 metrics, OAuth)
+* [WeatherAPI](https://www.weatherapi.com/) (1 metric, APIKey)
+* [Blockchain](https://www.blockchain.com/) (1 metric, no auth)
 
 ### Spotify metrics <a name="SpotifyMetrics"></a>
 To access further API requests, I must first get a bearer 2.0 authentication key, which refreshes every hour. With the second API key I could now get Spotify metrics. My Spotify metrics include a specific artist ID. I chose [Doja Cat](https://open.spotify.com/artist/5cj0lLjcoR7YOSnhnX0Po5) as my sample.
