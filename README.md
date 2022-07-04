@@ -199,8 +199,14 @@ Objects have `error_message` appended if a push fails.
 * Json log quickly fills up. After 2 hours I already had altogether 3000 lines of logs. The longer it gets, the longer it takes to read the file, parse json and write to file. Doing so only after all five metrics have been generated would be a significant optimization. This could be done by keeping a temporary array and later appending it all at once.
 
 ## Databox databoard <a name="DataboxDataboard"></a>
-Link coming soon
+[<b>DATABOARD</b>](https://app.databox.com/datawall/0c0b0b19a02b7bb6d3e2b5583b804e91062c2993d?boardId=874906)
+
 Email used in Databox: `neanikolic12@gmail.com`
+
+
+<img src="https://cdn.discordapp.com/attachments/662752215441866820/993441290203189259/unknown.png"/>
+<img src="https://cdn.discordapp.com/attachments/662752215441866820/993442152115875921/unknown.png"/>
+<img src="https://cdn.discordapp.com/attachments/662752215441866820/993442202409783316/unknown.png"/>
 
 This assignment was a lot of fun :)
 
