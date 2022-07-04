@@ -194,9 +194,10 @@ Objects have `error_message` appended if a push fails.
 }
 ```
 
-## Alternatives <a name="Alternatives"></a>
+## Alternatives and optimizations <a name="Alternatives"></a>
 * I noticed instructions had me log number of sent metrics. I would remove the parameter as it's not needed. Number of metrics can be calculated by the number of objects in the array and doesn't need to take up additional space.
 * Json log quickly fills up. After 2 hours I already had altogether 3000 lines of logs. The longer it gets, the longer it takes to read the file, parse json and write to file. Doing so only after all five metrics have been generated would be a significant optimization. This could be done by keeping a temporary array and later appending it all at once.
+* I would add scheduled triggers through Cron and run the app every hour. (0 * * * * - at 0 minutes every hour, every day of the month, every month, every day of the week).
 
 ## Databox databoard <a name="DataboxDataboard"></a>
 [<b>DATABOARD</b>](https://app.databox.com/datawall/0c0b0b19a02b7bb6d3e2b5583b804e91062c2993d?boardId=874906)
@@ -213,3 +214,5 @@ This assignment was a lot of fun :)
 <div align="right">
     <b><a class="top-link hide" href="#top">↑ Back to top</a></b>
 </div>
+
+<b>Author:</b> <i>Nea Nikolić</i>
